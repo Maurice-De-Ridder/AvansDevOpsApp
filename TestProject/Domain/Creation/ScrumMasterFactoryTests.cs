@@ -1,4 +1,6 @@
 ﻿using AvansDevOpsApp.Domain.Creation;
+using AvansDevOpsApp.Domain.Creation.Interfaces;
+using AvansDevOpsApp.Domain.Person;
 using System;
 using Xunit;
 
@@ -10,13 +12,13 @@ namespace TestProject.Domain.Creation
         public void CreatePerson_StateUnderTest_ExpectedBehavior()
         {
             // Arrange
-            var factory = new ScrumMasterFactory();
-
+            IPersonFactory factory = new ScrumMasterFactory();
+            var testValue = "Scrum master 1";
             // Act
-            var result = factory.CreatePerson();
-
+            AbstractPerson sut = factory.CreatePerson();
+            sut.Name = testValue;
             // Assert
-            Assert.True(false);
+            Assert.Equal(sut.Name, testValue);
         }
     }
 }
