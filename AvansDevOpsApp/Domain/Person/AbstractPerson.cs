@@ -9,6 +9,7 @@ namespace AvansDevOpsApp.Domain.Person
     public abstract class AbstractPerson
     {
         public string Name { get; set; }
+        public string Email { get; set; }
         public AbstractPerson() { }
     }
 }

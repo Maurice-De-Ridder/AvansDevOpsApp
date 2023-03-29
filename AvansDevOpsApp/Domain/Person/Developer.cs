@@ -8,6 +8,7 @@ namespace AvansDevOpsApp.Domain.Person
 {
     public class Developer : AbstractPerson
     {
+
         public Developer()
         {
         }

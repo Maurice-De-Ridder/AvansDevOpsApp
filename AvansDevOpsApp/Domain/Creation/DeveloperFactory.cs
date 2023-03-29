@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace AvansDevOpsApp.Domain.Creation
 {
-    internal class DeveloperFactory : IPersonFactory
+    public class DeveloperFactory : IPersonFactory
     {
         public AbstractPerson CreatePerson()
         {
