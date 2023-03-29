@@ -14,9 +14,9 @@ namespace AvansDevOpsApp.Domain.Person
         {
         }
 
-        public override void update(string notification)
+        public override void Update(string eventType ,string notification)
         {
-            string x = this.NotificationType.message(notification);
+            string x = this.NotificationType.Message(notification);
             //return x;
         }
     }

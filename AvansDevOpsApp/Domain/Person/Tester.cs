@@ -14,9 +14,17 @@ namespace AvansDevOpsApp.Domain.Person
 
         }
 
-        public override void update(string notification)
+        public override void Update(string eventType, string notification)
         {
-            throw new NotImplementedException();
+            string x = this.NotificationType.Message(notification);
+
+            switch (eventType)
+            {
+                case "ReadyForTesting":
+                    this.Inbox.Add(x);
+                    break;
+            }
+
         }
     }
 }

@@ -8,7 +8,7 @@ namespace AvansDevOpsApp.Domain.Notifier
 {
     public interface INotification
     {
-        public string message(string notification);
+        public string Message(string notification);
 
 
 

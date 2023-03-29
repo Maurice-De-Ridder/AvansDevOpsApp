@@ -8,7 +8,7 @@ namespace AvansDevOpsApp.Domain.Notifier
 {
     public class SlackNotification : INotification
     {
-        public string message(string notification)
+        public string Message(string notification)
         {
             return "Slack: " + notification;
         }

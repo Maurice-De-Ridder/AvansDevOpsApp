@@ -4,24 +4,25 @@ using AvansDevOpsApp.Domain.Project.Sprint;
 
 namespace TestProject
 {
-    public class UnitTest1
+    public class FN25
     {
         [Fact]
         public void Test1()
         {
             INotification notificationTest = new EmailNotification();
 
-            string toTest = notificationTest.message("SprintEen is cancelled");
+            string toTest = notificationTest.Message("SprintEen is cancelled");
+
             ProductOwner productOwner = new ProductOwner("Luuk",new EmailNotification());
 
-            Sprint sprintEen = new Sprint("SprintEen");
+            Sprint sprintEen = new Sprint("SprintEen",new NotificationPublisher());
 
-            sprintEen.Subscribe("Cancelled", productOwner);
+            sprintEen.Subscribe(productOwner);
 
             sprintEen.ChangeStateCancelled();
 
 
-            Assert.Equal(toTest, productOwner.latestMessage);
+            Assert.Equal(toTest, productOwner.Inbox[0]);
 
         }
     }

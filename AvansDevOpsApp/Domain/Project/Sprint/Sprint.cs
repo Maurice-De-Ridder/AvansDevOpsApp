@@ -10,22 +10,22 @@ namespace AvansDevOpsApp.Domain.Project.Sprint
 {
     public class Sprint : ISprint
     {
-        public INotificationPublisher publisher = new NotificationPublisher();
-
-        public string name;
-        public Sprint(string name)
+        public INotificationPublisher Publisher;
+        public string Name;
+        public Sprint(string name,INotificationPublisher publisher)
         {
-            this.name = name;
+            this.Publisher = publisher;
+            this.Name = name;
         }
-        public void Subscribe(string eventType,AbstractPerson person)
+        public void Subscribe(AbstractPerson person)
         {
-            this.publisher.subscribe(eventType,person);
+            this.Publisher.Subscribe(person);
         }
 
         // Verander dit bij implementatie van echte states
         public void ChangeStateCancelled()
         {
-            this.publisher.notifySubscribers("Cancelled", name + " is cancelled");
+            this.Publisher.NotifySubscribers("Cancelled", Name + " is cancelled");
 
         }
 

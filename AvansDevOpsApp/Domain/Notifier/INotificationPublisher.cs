@@ -9,11 +9,11 @@ namespace AvansDevOpsApp.Domain.Notifier
 {
     public interface INotificationPublisher
     {
-        public void subscribe(string eventType,AbstractPerson person);
+        public void Subscribe(AbstractPerson person);
 
-        public void unsubscribe(string eventType, AbstractPerson person);
+        public void Unsubscribe(AbstractPerson person);
 
-        public void notifySubscribers(string eventType, string notification);
+        public void NotifySubscribers(string eventType, string notification);
  
 
 
