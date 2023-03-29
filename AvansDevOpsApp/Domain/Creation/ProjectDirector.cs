@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace AvansDevOpsApp.Domain.Creation
 {
-    internal class ProjectBuildingDirector
+    internal class ProjectBuildingDirector 
     {
+
     }
 }
