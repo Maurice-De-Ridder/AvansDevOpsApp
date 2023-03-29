@@ -10,6 +10,7 @@ namespace AvansDevOpsApp.Domain.Project.Sprint
 {
     public interface ISprint
     {
+        public ScrumMaster ScrumMaster;
 
         public void Subscribe(AbstractPerson person);
         public void ChangeStateCancelled();

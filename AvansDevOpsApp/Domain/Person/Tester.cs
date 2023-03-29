@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace AvansDevOpsApp.Domain.Person
 {
-    internal class Tester : AbstractPerson
+    public class Tester : AbstractPerson
     {
         public Tester(string name, INotification notificationType) : base(name, notificationType)
         {

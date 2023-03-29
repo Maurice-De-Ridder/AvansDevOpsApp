@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AvansDevOpsApp.Domain.Project.Backlog
 {
-    internal class ProjectBacklog
+    public class ProjectBacklog
     {
     }
 }

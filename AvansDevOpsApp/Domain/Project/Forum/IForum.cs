@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AvansDevOpsApp.Domain.Project.Forum
 {
-    internal interface IForum
+    public interface IForum
     {
     }
 }
