@@ -9,7 +9,7 @@ namespace AvansDevOpsApp.Domain.Person
 {
     public class Tester : AbstractPerson
     {
-        public Tester(string name, INotification notificationType) : base(name, notificationType)
+        public Tester() 
         {
 
         }

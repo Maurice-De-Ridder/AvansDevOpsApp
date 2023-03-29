@@ -10,7 +10,7 @@ namespace AvansDevOpsApp.Domain.Person
     public class ScrumMaster : AbstractPerson
     {
 
-        public ScrumMaster(string name,INotification notificationType) :base(name,notificationType)    { }
+        public ScrumMaster()    { }
 
         public override void Update(string eventType, string notification)
         {

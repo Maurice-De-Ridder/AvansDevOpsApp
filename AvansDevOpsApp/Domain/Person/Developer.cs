@@ -10,7 +10,7 @@ namespace AvansDevOpsApp.Domain.Person
     public class Developer : AbstractPerson
     {
 
-        public Developer(string name, INotification notificationType) : base(name, notificationType)
+        public Developer()
         {
         }
 

@@ -11,7 +11,7 @@ namespace AvansDevOpsApp.Domain.Person
 {
     public class ProductOwner : AbstractPerson
     {
-        public ProductOwner(string name, INotification notificationType) : base(name, notificationType)
+        public ProductOwner() : base()
         {
 
         }

@@ -14,7 +14,7 @@ namespace AvansDevOpsApp.Domain.Creation
         public AbstractPerson CreatePerson()
         {
             //TODO Change this to something logical
-            return new Developer("ChangeThis",new EmailNotification());
+            return new Developer();
         }
     }
 }

@@ -16,10 +16,9 @@ namespace AvansDevOpsApp.Domain.Person
 
         public List<string> Inbox = new List<string>();
 
-        public AbstractPerson(string name, INotification notificationType) 
+        public AbstractPerson() 
         { 
-            this.Name = name;
-            this.NotificationType = notificationType; 
+
         }
 
         public abstract void Update(string eventType ,string notification);
