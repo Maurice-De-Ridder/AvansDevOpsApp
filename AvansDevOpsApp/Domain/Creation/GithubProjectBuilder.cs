@@ -50,7 +50,7 @@ namespace AvansDevOpsApp.Domain.Creation
             this.Project.Developers = developers;
         }
 
-        public void BuildProjectOwner(ProductOwner productOwner)
+        public void BuildProjectOwner(AbstractPerson productOwner)
         {
             this.Project.ProjectOwner = productOwner;
         }

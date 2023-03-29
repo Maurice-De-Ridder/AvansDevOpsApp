@@ -13,14 +13,13 @@ namespace AvansDevOpsApp.Domain.Creation.Interfaces
 {
     public interface IProjectBuilder
     {
-
         public void Reset();
         public void BuildProjectBacklog();
         public void BuildForum();
         public void BuildProjectName(string name);
         public void BuildDescription(string description);
         public void BuildDevelopers(List<AbstractPerson> developers);
-        public void BuildProjectOwner(ProductOwner productOwner);
+        public void BuildProjectOwner(AbstractPerson productOwner);
         public void BuildSprint(ISprint sprint);
         public IProject GetProject();
 
