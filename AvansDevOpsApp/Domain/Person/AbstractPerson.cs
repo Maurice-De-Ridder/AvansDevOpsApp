@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AvansDevOpsApp.Domain.Person
 {
-    internal abstract class AbstractPerson
+    public abstract class AbstractPerson
     {
         public string Name { get; set; }
         public AbstractPerson() { }
