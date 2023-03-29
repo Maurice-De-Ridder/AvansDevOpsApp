@@ -18,7 +18,7 @@ namespace AvansDevOpsApp.Domain.Creation
             _builder = builder;
         }
 
-        public void BuildGithubProjectFull(string name, string description, List<AbstractPerson> developers, ProductOwner productOwner,ISprint sprint)
+        public void BuildProjectFull(string name, string description, List<AbstractPerson> developers, ProductOwner productOwner,ISprint sprint)
         {
             this._builder.BuildProjectBacklog();
             this._builder.BuildForum();
