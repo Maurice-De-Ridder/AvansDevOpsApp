@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace AvansDevOpsApp.Domain.Person
 {
-    internal class Developer
+    internal class Developer : AbstractPerson
     {
+        public Developer()
+        {
+        }
     }
 }

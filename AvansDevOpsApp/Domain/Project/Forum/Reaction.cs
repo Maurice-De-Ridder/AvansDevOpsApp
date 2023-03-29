@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AvansDevOpsApp.Domain.Project.Forum
 {
-    internal class Class1
+    internal class Reaction
     {
     }
 }

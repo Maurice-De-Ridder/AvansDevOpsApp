@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace AvansDevOpsApp.Domain.Person
 {
-    internal class ProductOwner
+    internal class ProductOwner : AbstractPerson
     {
+        public ProductOwner() { }
+
     }
 }

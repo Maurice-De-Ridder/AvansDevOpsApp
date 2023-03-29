@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace AvansDevOpsApp.Domain.Person
 {
-    internal class Tester
+    internal class Tester : AbstractPerson
     {
+        public Tester()
+        {
+
+        }
     }
 }
