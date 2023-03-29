@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace AvansDevOpsApp.Domain.Notifier
 {
-    internal class SlackNotification
+    public class SlackNotification : INotification
     {
+        public string message(string notification)
+        {
+            return "Slack: " + notification;
+        }
     }
 }

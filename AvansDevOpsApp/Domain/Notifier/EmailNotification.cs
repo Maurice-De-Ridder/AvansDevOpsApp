@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace AvansDevOpsApp.Domain.Notifier
 {
-    internal class EmailNotification
+    public class EmailNotification : INotification
     {
+        public string message(string notification)
+        {
+            return "Email: " + notification;
+        }
     }
 }

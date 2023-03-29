@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AvansDevOpsApp.Domain.Notifier;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,6 +10,17 @@ namespace AvansDevOpsApp.Domain.Person
     public abstract class AbstractPerson
     {
         public string Name { get; set; }
-        public AbstractPerson() { }
+
+        public INotification NotificationType;
+
+        public AbstractPerson(string name, INotification notificationType) 
+        { 
+            this.Name = name;
+            this.NotificationType = notificationType; 
+        }
+
+        public abstract void update(string notification);
+       
+    
     }
 }

@@ -1,4 +1,5 @@
 ﻿using AvansDevOpsApp.Domain.Creation.Interfaces;
+using AvansDevOpsApp.Domain.Notifier;
 using AvansDevOpsApp.Domain.Person;
 using System;
 using System.Collections.Generic;
@@ -12,7 +13,8 @@ namespace AvansDevOpsApp.Domain.Creation
     {
         public AbstractPerson CreatePerson()
         {
-            return new Developer();
+            //TODO Change this to something logical
+            return new Developer("ChangeThis",new EmailNotification());
         }
     }
 }
