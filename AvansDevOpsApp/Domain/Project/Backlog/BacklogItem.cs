@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AvansDevOpsApp.Domain.Project.Forum
+namespace AvansDevOpsApp.Domain.Project.Backlog
 {
-    internal class Reaction
+    public class BacklogItem
     {
     }
 }
