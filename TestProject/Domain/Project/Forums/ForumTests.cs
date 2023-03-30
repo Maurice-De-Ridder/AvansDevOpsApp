@@ -1,4 +1,8 @@
-﻿using AvansDevOpsApp.Domain.Project.Forums;
+﻿using AvansDevOpsApp.Domain.Notifier;
+using AvansDevOpsApp.Domain.Person;
+using AvansDevOpsApp.Domain.Project.Backlog;
+using AvansDevOpsApp.Domain.Project.Forum;
+using AvansDevOpsApp.Domain.Project.Forums;
 using System;
 using Xunit;
 
@@ -11,12 +15,12 @@ namespace TestProject.Domain.Project.Forums
         {
             // Arrange
             var forum = new Forum();
-            BacklogItem backlogItem = null;
-
+            BacklogItem backlogItem = new BacklogItem();
+            NotificationPublisher notificationPublisher = new NotificationPublisher();
+            AbstractPerson person = new Developer();
             // Act
             forum.AddDiscussion(
-                backlogItem);
-
+                backlogItem, notificationPublisher, person);
             // Assert
             Assert.True(false);
         }

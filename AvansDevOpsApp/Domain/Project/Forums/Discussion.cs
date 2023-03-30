@@ -24,8 +24,8 @@ namespace AvansDevOpsApp.Domain.Project.Forums
             // add the comment
             Reactions.Add(reaction);
             // notify all other commenters
-            string ReferencedBacklogItem.Name = $"{reaction.Person} added a comment to discussion {ReferencedBacklogItem.Name}.";
-            DiscussionNotificationPublisher.NotifySubscribers("newComment", )
+            string reactionEventText = $"{reaction.Person} added a comment to discussion {ReferencedBacklogItem.Name}.";
+            DiscussionNotificationPublisher.NotifySubscribers("newComment", reactionEventText);
         }
 
     }

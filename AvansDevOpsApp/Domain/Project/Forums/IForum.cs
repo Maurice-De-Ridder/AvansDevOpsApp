@@ -1,4 +1,6 @@
-﻿using AvansDevOpsApp.Domain.Project.Backlog;
+﻿using AvansDevOpsApp.Domain.Notifier;
+using AvansDevOpsApp.Domain.Person;
+using AvansDevOpsApp.Domain.Project.Backlog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +11,7 @@ namespace AvansDevOpsApp.Domain.Project.Forum
 {
     public interface IForum
     {
-        public void AddDiscussion(BacklogItem backlogItem);
+        public void AddDiscussion(BacklogItem backlogItem, INotificationPublisher notificationPublisher, AbstractPerson creator);
         public void RemoveDiscussion(BacklogItem backlogItems);
 
 
