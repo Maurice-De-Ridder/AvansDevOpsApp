@@ -21,7 +21,13 @@ namespace AvansDevOpsApp.Domain.Person
 
         }
 
-        public abstract void Update(string eventType ,string notification);
+        public void Update(string eventType ,string notification)
+        {
+            if (eventType == "newMessage")
+            {
+                Inbox.Add(notification);
+            }
+        }
        
     
     }

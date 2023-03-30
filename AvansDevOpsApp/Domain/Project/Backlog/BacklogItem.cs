@@ -22,5 +22,10 @@ namespace AvansDevOpsApp.Domain.Project.Backlog
 
         public BacklogItem() { }
 
+        public Boolean IsCorrectState(IBacklogState expectedState)
+        {
+            return expectedState.GetType() == State.GetType();
+        }
+
     }
 }
