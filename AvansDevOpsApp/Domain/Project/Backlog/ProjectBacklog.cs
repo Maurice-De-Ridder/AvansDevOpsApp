@@ -14,9 +14,23 @@ namespace AvansDevOpsApp.Domain.Project.Backlog
         public void Add(BacklogItem item)
         {
             items.Add(item);
-            items.OrderBy(i => i.Name);
+        }
+
+        public void ChangePos(int index, BacklogItem item)
+        {
+            this.items.Remove(item);
+            this.items.Insert(index, item);
         }
         
+        public void Remove(BacklogItem item)
+        {
+            this.items.Remove(item);
+        }
+
+        public List<BacklogItem> GetItems()
+        {
+            return this.items;
+        }
         public BacklogItem GetForSprint(string name)
         {
             BacklogItem item = items.Find(i => i.Name == name);

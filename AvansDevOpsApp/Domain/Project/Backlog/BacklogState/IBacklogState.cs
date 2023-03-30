@@ -8,5 +8,8 @@ namespace AvansDevOpsApp.Domain.Project.Backlog.BacklogState
 {
     public interface IBacklogState
     {
+
+
+        public void ChangeState(IBacklogState State);
     }
 }
