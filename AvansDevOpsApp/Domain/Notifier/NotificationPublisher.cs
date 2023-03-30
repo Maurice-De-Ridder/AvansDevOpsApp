@@ -19,6 +19,10 @@ namespace AvansDevOpsApp.Domain.Notifier
 
         public void Subscribe(AbstractPerson subscriber)
         {
+            // One person can not subscribe to a single Notification publisher at once, so first check if the person already exists.
+
+            if (Observers.Count(person => person == subscriber) > 0) throw new ArgumentOutOfRangeException();
+
             Observers.Add(subscriber);
         }
 
