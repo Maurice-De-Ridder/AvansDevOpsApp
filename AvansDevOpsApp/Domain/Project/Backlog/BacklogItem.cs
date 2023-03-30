@@ -8,19 +8,19 @@ using System.Threading.Tasks;
 
 namespace AvansDevOpsApp.Domain.Project.Backlog
 {
-    public class BacklogActivity
+    public class BacklogItem
     {
 
         public string Name;
         public string Description;
         public int StoryPoints;
-        public AbstractPerson Developer;
+        public AbstractPerson? Developer;
+        public List<BacklogActivity>? Activities = new List<BacklogActivity>();
         public string DoD;
+        public IBacklogState State;
 
 
-        public BacklogActivity()
-        {
+        public BacklogItem() { }
 
-        }
     }
 }

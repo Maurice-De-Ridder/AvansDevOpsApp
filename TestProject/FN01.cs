@@ -41,9 +41,12 @@ namespace TestProject
             IProjectBuilder ProjectBuilder = new GithubProjectBuilder();
             ProjectBuildingDirector Director = new ProjectBuildingDirector(ProjectBuilder);
 
-            IProject TestProject = Director.BuildProjectFull(ProjectName,Description,Developers,ProductOwner,Sprint);
+            AbstractProject TestProject = Director.BuildProjectFull(ProjectName,Description,Developers,ProductOwner,Sprint);
             Assert.NotNull(TestProject);
-            
+            Assert.Equal(ProjectName, TestProject.Name);
+            Assert.Equal(Description, TestProject.Description);
+            Assert.Equal(Developers,TestProject.Developers);
+            Assert.Equal(Sprint, TestProject.Sprints[0]);
             
 
         }

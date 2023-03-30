@@ -1,5 +1,6 @@
 ﻿using AvansDevOpsApp.Domain.Notifier;
 using AvansDevOpsApp.Domain.Person;
+using AvansDevOpsApp.Domain.Project.Backlog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,10 +13,16 @@ namespace AvansDevOpsApp.Domain.Project.Sprint
     {
         public INotificationPublisher Publisher;
         public string Name;
-        public Sprint(string name,INotificationPublisher publisher)
+
+        public List<BacklogItem> SprintBacklogItems= new List<BacklogItem>();
+        public DateTime Created = DateTime.Now;
+        public DateTime EndTime;
+
+        public Sprint(string name, DateTime endTime, INotificationPublisher publisher)
         {
             this.Publisher = publisher;
             this.Name = name;
+            this.EndTime= endTime;
         }
         public void Subscribe(AbstractPerson person)
         {

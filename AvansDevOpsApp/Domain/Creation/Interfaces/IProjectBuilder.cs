@@ -21,7 +21,7 @@ namespace AvansDevOpsApp.Domain.Creation.Interfaces
         public void BuildDevelopers(List<AbstractPerson> developers);
         public void BuildProjectOwner(AbstractPerson productOwner);
         public void BuildSprint(ISprint sprint);
-        public IProject GetProject();
+        public AbstractProject GetProject();
 
 
     }

@@ -10,16 +10,8 @@ using System.Threading.Tasks;
 
 namespace AvansDevOpsApp.Domain.Project
 {
-    public class GithubProject : IProject
+    public class GithubProject : AbstractProject
     {
-        public string Name;
-        public string Description;
-        public List<AbstractPerson> Developers = new List<AbstractPerson>();
-        public AbstractPerson ProjectOwner;
-        public List<ISprint> Sprints = new List<ISprint>();
-        public ProjectBacklog ProjectBacklog;
-        public IForum Forum;
-
         public GithubProject()
         {
 
