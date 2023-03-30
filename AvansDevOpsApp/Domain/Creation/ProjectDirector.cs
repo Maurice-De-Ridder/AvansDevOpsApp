@@ -18,7 +18,7 @@ namespace AvansDevOpsApp.Domain.Creation
             _builder = builder;
         }
 
-        public void BuildProjectFull(string name, string description, List<AbstractPerson> developers, ProductOwner productOwner,ISprint sprint)
+        public AbstractProject BuildProjectFull(string name, string description, List<AbstractPerson> developers, AbstractPerson productOwner,ISprint sprint)
         {
             this._builder.BuildProjectBacklog();
             this._builder.BuildForum();
@@ -27,7 +27,8 @@ namespace AvansDevOpsApp.Domain.Creation
             this._builder.BuildDevelopers(developers);
             this._builder.BuildProjectOwner(productOwner);
             this._builder.BuildSprint(sprint);
-            this._builder.GetProject();
+            this._builder.BuildProjectBacklog();
+            return this._builder.GetProject();
         }
 
 
