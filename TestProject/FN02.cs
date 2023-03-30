@@ -57,7 +57,7 @@ namespace TestProject
             item.Description = Description;
             item.StoryPoints = StoryPoints;
             item.DoD = DoD;
-            item.Developer = DeveloperEen;
+            item.AddDeveloper(DeveloperEen);
             item.State = State;
 
 
@@ -66,7 +66,7 @@ namespace TestProject
             Assert.Equal(item.Description, Description);
             Assert.Equal(item.StoryPoints, StoryPoints);
             Assert.Equal(item.DoD, DoD);
-            Assert.Equal(item.Developer, DeveloperEen);
+            Assert.Equal(item.GetDeveloper(), DeveloperEen);
             Assert.Equal(item.State, State);
         }
     }

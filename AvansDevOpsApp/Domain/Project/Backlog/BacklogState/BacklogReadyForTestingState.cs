@@ -8,5 +8,9 @@ namespace AvansDevOpsApp.Domain.Project.Backlog.BacklogState
 {
     internal class BacklogReadyForTestingState : IBacklogState
     {
+        public void ChangeState(IBacklogState State)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
