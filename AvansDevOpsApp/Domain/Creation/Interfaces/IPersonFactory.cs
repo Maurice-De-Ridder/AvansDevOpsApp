@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace AvansDevOpsApp.Domain.Creation.Interfaces
 {
-    internal interface IPersonFactory
+    public interface IPersonFactory
     {
         public AbstractPerson CreatePerson();
     }

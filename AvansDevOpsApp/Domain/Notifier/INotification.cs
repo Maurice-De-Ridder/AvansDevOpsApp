@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace AvansDevOpsApp.Domain.Notifier
 {
-    internal interface INotification
+    public interface INotification
     {
+        public string Message(string notification);
+
+
+
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AvansDevOpsApp.Domain.Notifier;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,6 +10,25 @@ namespace AvansDevOpsApp.Domain.Person
     public abstract class AbstractPerson
     {
         public string Name { get; set; }
-        public AbstractPerson() { }
+        public string Email { get; set; }
+
+        public INotification NotificationType;
+
+        public List<string> Inbox = new List<string>();
+
+        public AbstractPerson() 
+        { 
+
+        }
+
+        public void Update(string eventType ,string notification)
+        {
+            if (eventType == "newMessage")
+            {
+                Inbox.Add(notification);
+            }
+        }
+       
+    
     }
 }

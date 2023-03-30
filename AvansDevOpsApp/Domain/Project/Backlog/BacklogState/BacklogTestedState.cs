@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AvansDevOpsApp.Domain.Project.Backlog.BacklogState
 {
-    internal class BacklogTestedState
+    public class BacklogTestedState : IBacklogState
     {
     }
 }

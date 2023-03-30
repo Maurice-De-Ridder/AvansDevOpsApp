@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AvansDevOpsApp.Domain.Project.Sprint.SprintState
 {
-    internal class SprintCancelledState
+    public class SprintCancelledState
     {
     }
 }

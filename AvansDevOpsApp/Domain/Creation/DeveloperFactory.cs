@@ -1,4 +1,5 @@
 ﻿using AvansDevOpsApp.Domain.Creation.Interfaces;
+using AvansDevOpsApp.Domain.Notifier;
 using AvansDevOpsApp.Domain.Person;
 using System;
 using System.Collections.Generic;
@@ -8,10 +9,11 @@ using System.Threading.Tasks;
 
 namespace AvansDevOpsApp.Domain.Creation
 {
-    internal class DeveloperFactory : IPersonFactory
+    public class DeveloperFactory : IPersonFactory
     {
         public AbstractPerson CreatePerson()
         {
+            //TODO Change this to something logical
             return new Developer();
         }
     }
