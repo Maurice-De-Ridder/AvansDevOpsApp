@@ -12,8 +12,10 @@ namespace AvansDevOpsApp.Domain.Person
 
         public ScrumMaster()    { }
 
-        public override void Update(string eventType, string notification)
+        public void Update(string eventType, string notification)
         {
+            base.Update(eventType, notification);  
+
             string x = this.NotificationType.Message(notification);
             
             switch(eventType)

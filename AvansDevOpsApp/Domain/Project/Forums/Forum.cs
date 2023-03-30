@@ -1,6 +1,7 @@
 ﻿using AvansDevOpsApp.Domain.Notifier;
 using AvansDevOpsApp.Domain.Person;
 using AvansDevOpsApp.Domain.Project.Backlog;
+using AvansDevOpsApp.Domain.Project.Backlog.BacklogState;
 using AvansDevOpsApp.Domain.Project.Forums;
 using System;
 using System.Collections.Generic;
@@ -16,6 +17,9 @@ namespace AvansDevOpsApp.Domain.Project.Forum
         public Forum() { }
         public void AddDiscussion(BacklogItem backlogItem, INotificationPublisher notificationPublisher, AbstractPerson creator)
         {
+            // make sure the discussion can not be added when the backlogstate is done 
+            if (backlogItem.State.Equals(new BacklogDoneState())) throw new Exception();
+
             Discussion discussionToAdd = new Discussion(notificationPublisher);
 
             // add the backlog item reference
@@ -29,12 +33,11 @@ namespace AvansDevOpsApp.Domain.Project.Forum
 
             // add the discussion to the list
             Discussions.Add(discussionToAdd);
-            
         }
 
-        public void RemoveDiscussion(BacklogItem backlogItems)
+        public void RemoveDiscussion(BacklogItem backlogItem)
         {
-            throw new NotImplementedException();
+            Discussions.Remove(Discussions.First(discussion => discussion.ReferencedBacklogItem == backlogItem));
         }
     }
 }

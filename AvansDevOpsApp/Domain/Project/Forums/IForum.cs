@@ -12,7 +12,7 @@ namespace AvansDevOpsApp.Domain.Project.Forum
     public interface IForum
     {
         public void AddDiscussion(BacklogItem backlogItem, INotificationPublisher notificationPublisher, AbstractPerson creator);
-        public void RemoveDiscussion(BacklogItem backlogItems);
+        public void RemoveDiscussion(BacklogItem backlogItem);
 
 
     }

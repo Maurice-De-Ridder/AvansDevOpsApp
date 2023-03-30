@@ -1,6 +1,7 @@
 ﻿using AvansDevOpsApp.Domain.Creation;
 using AvansDevOpsApp.Domain.Creation.Interfaces;
 using AvansDevOpsApp.Domain.Person;
+using Moq;
 using System;
 using Xunit;
 
@@ -13,6 +14,7 @@ namespace TestProject.Domain.Creation
         {
             // Arrange
             IPersonFactory factory = new DeveloperFactory();
+
             var testValue = "Developer 1";
             // Act
             AbstractPerson sut = factory.CreatePerson();
