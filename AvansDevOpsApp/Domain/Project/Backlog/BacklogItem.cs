@@ -63,6 +63,7 @@ namespace AvansDevOpsApp.Domain.Project.Backlog
             if (Developer == null || this.Activities == null)
             {
                 this.Activities = new List<BacklogActivity>();
+                Console.Write("Test");
             }
             else
             {
