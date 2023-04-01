@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace AvansDevOpsApp.Domain.Project.Sprint
 {
-    internal class PartialProductStrategy
+    public class PartialProductStrategy : ISprintTypeStrategy
     {
+        public void FinishSprint()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

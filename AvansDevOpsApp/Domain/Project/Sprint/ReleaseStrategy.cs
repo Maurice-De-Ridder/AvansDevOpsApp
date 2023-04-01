@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace AvansDevOpsApp.Domain.Project.Sprint
 {
-    internal class ReleaseStrategy
+    public class ReleaseStrategy : ISprintTypeStrategy
     {
+        public void FinishSprint()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
