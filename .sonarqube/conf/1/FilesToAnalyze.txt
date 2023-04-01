@@ -1,0 +1,16 @@
+﻿C:\School\Leerjaar_3\Periode_3\SOFA3\Project\AvansDevOpsApp\TestProject\Domain\Creation\DeveloperFactoryTests.cs
+C:\School\Leerjaar_3\Periode_3\SOFA3\Project\AvansDevOpsApp\TestProject\Domain\Creation\ProductOwnerFactoryTests.cs
+C:\School\Leerjaar_3\Periode_3\SOFA3\Project\AvansDevOpsApp\TestProject\Domain\Creation\ScrumMasterFactoryTests.cs
+C:\School\Leerjaar_3\Periode_3\SOFA3\Project\AvansDevOpsApp\TestProject\Domain\Creation\TesterFactoryTests.cs
+C:\School\Leerjaar_3\Periode_3\SOFA3\Project\AvansDevOpsApp\TestProject\Domain\Project\Forums\DiscussionTests.cs
+C:\School\Leerjaar_3\Periode_3\SOFA3\Project\AvansDevOpsApp\TestProject\FN01.cs
+C:\School\Leerjaar_3\Periode_3\SOFA3\Project\AvansDevOpsApp\TestProject\FN02.cs
+C:\School\Leerjaar_3\Periode_3\SOFA3\Project\AvansDevOpsApp\TestProject\FN03.cs
+C:\School\Leerjaar_3\Periode_3\SOFA3\Project\AvansDevOpsApp\TestProject\FN25.cs
+C:\School\Leerjaar_3\Periode_3\SOFA3\Project\AvansDevOpsApp\TestProject\Usings.cs
+C:\Users\luuk-\.nuget\packages\microsoft.net.test.sdk\17.3.2\build\netcoreapp2.1\Microsoft.NET.Test.Sdk.Program.cs
+C:\Users\luuk-\.nuget\packages\microsoft.testplatform.testhost\17.3.2\build\netcoreapp2.1\x64\testhost.exe
+C:\Users\luuk-\.nuget\packages\microsoft.testplatform.testhost\17.3.2\build\netcoreapp2.1\x64\testhost.dll
+C:\Users\luuk-\.nuget\packages\xunit.runner.visualstudio\2.4.5\build\netcoreapp3.1\xunit.runner.visualstudio.dotnetcore.testadapter.dll
+C:\Users\luuk-\.nuget\packages\xunit.runner.visualstudio\2.4.5\build\netcoreapp3.1\xunit.runner.reporters.netcoreapp10.dll
+C:\Users\luuk-\.nuget\packages\xunit.runner.visualstudio\2.4.5\build\netcoreapp3.1\xunit.runner.utility.netcoreapp10.dll
