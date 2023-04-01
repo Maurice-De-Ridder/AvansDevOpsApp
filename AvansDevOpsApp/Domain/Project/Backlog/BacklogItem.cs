@@ -104,6 +104,17 @@ namespace AvansDevOpsApp.Domain.Project.Backlog
                 throw new ArgumentException("Activity is empty cannot get activities");
             }
         }
-
+        public void ChangeState(IBacklogState newState)
+        {
+            this.State = newState;
+        }
+        public void ChangeStateTesting()
+        {
+            this.ChangeState(new BacklogTestingState());
+        }
+        public void ChangeStateReadyForTesting()
+        {
+            this.ChangeState(new BacklogReadyForTestingState());
+        }
     }
 }
