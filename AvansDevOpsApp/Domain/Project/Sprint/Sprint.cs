@@ -29,7 +29,6 @@ namespace AvansDevOpsApp.Domain.Project.Sprint
             this.Publisher.Subscribe(person);
         }
 
-        // Verander dit bij implementatie van echte states
         public void ChangeStateCancelled()
         {
             this.Publisher.NotifySubscribers("Cancelled", Name + " is cancelled");

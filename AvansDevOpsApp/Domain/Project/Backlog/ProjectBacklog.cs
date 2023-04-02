@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AvansDevOpsApp.Domain.Person;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,13 +7,14 @@ using System.Threading.Tasks;
 
 namespace AvansDevOpsApp.Domain.Project.Backlog
 {
-    public class ProjectBacklog
+    public class ProjectBacklog : IProjectBacklog
     {
         private List<BacklogItem> items = new List<BacklogItem>();
         public ProjectBacklog() { }
         
         public void Add(BacklogItem item)
         {
+            item.ChangeContext(this);
             items.Add(item);
         }
 
@@ -42,5 +44,9 @@ namespace AvansDevOpsApp.Domain.Project.Backlog
             return item;
         }
 
+        public void Subscribe(AbstractPerson p)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

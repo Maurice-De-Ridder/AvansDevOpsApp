@@ -4,12 +4,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Xml.Linq;
 
-namespace AvansDevOpsApp.Domain.Project.Sprint
+namespace AvansDevOpsApp.Domain.Project
 {
-    public interface ISprint : IEnumerableBacklog
+    public interface IEnumerableBacklog
     {
-        public void ChangeStateCancelled();
+
+        public void Subscribe(AbstractPerson p);
     }
 }

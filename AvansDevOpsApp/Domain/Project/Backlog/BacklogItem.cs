@@ -21,7 +21,7 @@ namespace AvansDevOpsApp.Domain.Project.Backlog
         private AbstractPerson? Developer;
         private List<BacklogActivity>? Activities;
 
-     
+        private IEnumerableBacklog _context;
 
         public BacklogItem() 
         {
@@ -33,13 +33,17 @@ namespace AvansDevOpsApp.Domain.Project.Backlog
             return expectedState.GetType() == State.GetType();
         }
 
+        public void ChangeContext(IEnumerableBacklog context)
+        {
+            this._context = context;
+        }
+
         public void ChangeState(AbstractBacklogState State)
         {
             //implement correct change state
             this.State = State;
             this.State.SetContext(this);
         }
-
 
 
         public void AddDeveloper(AbstractPerson developer)
