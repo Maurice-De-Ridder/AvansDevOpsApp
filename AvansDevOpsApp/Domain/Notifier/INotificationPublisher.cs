@@ -14,9 +14,6 @@ namespace AvansDevOpsApp.Domain.Notifier
         public void Unsubscribe(AbstractPerson person);
 
         public void NotifySubscribers(string eventType, string notification);
- 
-
-
-
+        public List<AbstractPerson> GetObservers();
     }
 }

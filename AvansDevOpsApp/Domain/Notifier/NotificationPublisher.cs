@@ -12,6 +12,12 @@ namespace AvansDevOpsApp.Domain.Notifier
         public List<AbstractPerson> Observers = new List<AbstractPerson>();
 
         public NotificationPublisher() { }
+
+        public List<AbstractPerson> GetObservers()
+        {
+            return Observers; 
+        }
+
         public void NotifySubscribers(string eventType,string notification)
         {
             Observers.ForEach(observer => observer.Update(eventType,notification));

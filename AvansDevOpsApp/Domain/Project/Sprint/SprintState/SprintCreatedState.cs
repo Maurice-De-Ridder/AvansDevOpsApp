@@ -9,8 +9,8 @@ namespace AvansDevOpsApp.Domain.Project.Sprint.SprintState
 {
     public class SprintCreatedState : ISprintState
     {
-        public Sprint SprintContext;
-        public SprintCreatedState(Sprint sprintContext) 
+        public ConcreteSprint SprintContext;
+        public SprintCreatedState(ConcreteSprint sprintContext) 
         { 
             SprintContext = sprintContext;
         }

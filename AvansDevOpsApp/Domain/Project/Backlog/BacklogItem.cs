@@ -21,7 +21,6 @@ namespace AvansDevOpsApp.Domain.Project.Backlog
         private AbstractPerson? Developer;
         private List<BacklogActivity>? Activities;
 
-
         public BacklogItem() { }
 
         public Boolean IsCorrectState(IBacklogState expectedState)

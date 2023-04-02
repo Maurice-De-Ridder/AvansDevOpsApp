@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace AvansDevOpsApp.Domain.Project.Sprint
 {
-    public class Sprint : ISprint
+    public class ConcreteSprint : ISprint
     {
         public INotificationPublisher Publisher;
         public string Name;
@@ -21,7 +21,7 @@ namespace AvansDevOpsApp.Domain.Project.Sprint
         public ISprintState State;
         public ISprintTypeStrategy SprintStrategy;
 
-        public Sprint(string name, DateTime endTime, INotificationPublisher publisher, ISprintTypeStrategy typeStrategy)
+        public ConcreteSprint(string name, DateTime endTime, INotificationPublisher publisher, ISprintTypeStrategy typeStrategy)
         {
             this.Publisher = publisher;
             this.Name = name;
@@ -37,7 +37,6 @@ namespace AvansDevOpsApp.Domain.Project.Sprint
         public void ChangeStateCancelled()
         {
             this.Publisher.NotifySubscribers("Cancelled", Name + " is cancelled");
-
         }
 
         public void ChangeState(ISprintState sprintState)
@@ -79,6 +78,14 @@ namespace AvansDevOpsApp.Domain.Project.Sprint
         public void FinishSprint()
         {
             this.SprintStrategy.FinishSprint();
+        }
+
+        public void CheckTime()
+        {
+            if(DateTime.Now > EndTime)
+            {
+                State = new SprintDoneState(); 
+            }
         }
     }
 }
