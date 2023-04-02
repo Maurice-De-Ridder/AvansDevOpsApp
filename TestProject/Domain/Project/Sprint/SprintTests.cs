@@ -44,19 +44,19 @@ namespace TestProject.Domain.Project.Sprint
             this.mockRepository.VerifyAll();
         }
 
-        [Fact]
-        public void ChangeStateCancelled_StateUnderTest_ExpectedBehavior()
-        {
-            // Arrange
-            var sprint = this.CreateSprint();
+        //[Fact]
+        //public void ChangeStateCancelled_StateUnderTest_ExpectedBehavior()
+        //{
+        //    // Arrange
+        //    var sprint = this.CreateSprint();
 
-            // Act
-            sprint.ChangeStateCancelled();
+        //    // Act
+        //    sprint.ChangeStateCancelled();
 
-            // Assert
-            Assert.True(false);
-            this.mockRepository.VerifyAll();
-        }
+        //    // Assert
+        //    Assert.True(false);
+        //    this.mockRepository.VerifyAll();
+        //}
 
         //[Fact]
         //public void ChangeState_StateUnderTest_ExpectedBehavior()
