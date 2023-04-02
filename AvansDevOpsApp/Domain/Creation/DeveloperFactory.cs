@@ -16,5 +16,10 @@ namespace AvansDevOpsApp.Domain.Creation
             //TODO Change this to something logical
             return new Developer();
         }
+
+        public AbstractPerson CreateLead() 
+        {
+            return new Developer() { IsLead = true};
+        }
     }
 }
