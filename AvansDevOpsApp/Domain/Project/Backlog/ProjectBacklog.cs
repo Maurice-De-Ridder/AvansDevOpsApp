@@ -1,4 +1,6 @@
-﻿using System;
+﻿using AvansDevOpsApp.Domain.Notifier;
+using AvansDevOpsApp.Domain.Person;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,14 +8,19 @@ using System.Threading.Tasks;
 
 namespace AvansDevOpsApp.Domain.Project.Backlog
 {
-    public class ProjectBacklog
+    public class ProjectBacklog : IProjectBacklog
     {
         private List<BacklogItem> items = new List<BacklogItem>();
-        public ProjectBacklog() { }
+
+        public INotificationPublisher Publisher;
+        public ProjectBacklog(INotificationPublisher publisher) 
+        { 
+            this.Publisher = publisher;
+        }
         
         public void Add(BacklogItem item)
         {
-            items.Add(item);
+            this.items.Add(item);
         }
 
         public void ChangePos(int index, BacklogItem item)
@@ -31,16 +38,14 @@ namespace AvansDevOpsApp.Domain.Project.Backlog
         {
             return this.items;
         }
-        public BacklogItem GetForSprint(string name)
+        public void Subscribe(AbstractPerson p)
         {
-            BacklogItem item = items.Find(i => i.Name == name);
-            if (item == null)
-            {
-                return null;
-            }
-            items.Remove(item);
-            return item;
+            this.Publisher.Subscribe(p);
         }
 
+        public INotificationPublisher GetPublisher()
+        {
+            return this.Publisher;
+        }
     }
 }

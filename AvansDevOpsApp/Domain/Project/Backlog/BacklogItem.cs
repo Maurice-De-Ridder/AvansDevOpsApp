@@ -18,9 +18,10 @@ namespace AvansDevOpsApp.Domain.Project.Backlog
         public string DoD;
         public AbstractBacklogState State;
 
-        private AbstractPerson? Developer;
+        public AbstractPerson? Developer;
         private List<BacklogActivity>? Activities;
 
+        private IEnumerableBacklog _context;
 
         public BacklogItem() 
         {
@@ -32,11 +33,51 @@ namespace AvansDevOpsApp.Domain.Project.Backlog
             return expectedState.GetType() == State.GetType();
         }
 
+        public void ChangeContext(IEnumerableBacklog context)
+        {
+            this._context = context;
+        }
+
+        public IEnumerableBacklog GetContext()
+        {
+            return this._context;
+        }
+
         public void ChangeState(AbstractBacklogState State)
         {
-            //implement correct change state
             this.State = State;
             this.State.SetContext(this);
+        }
+
+        public void ChangeStateBacklogDoing()
+        {
+            this.State.ChangeStateBacklogDoing();
+        }
+
+        public void ChangeStateBacklogDone()
+        {
+            this.State.ChangeStateBacklogDone();
+        }
+
+        public void ChangeStateBacklogReadyForTesting()
+        {
+            this.State.ChangeStateBacklogReadyForTesting();
+           
+        }
+
+        public void ChangeStateBacklogTested()
+        {
+            this.State.ChangeStateBacklogTested();
+        }
+
+        public void ChangeStateBacklogTesting()
+        {
+            this.State.ChangeStateBacklogTesting();
+        }
+
+        public void ChangeStateBacklogTodo()
+        {
+            this.State.ChangeStateBacklogTodo();
         }
 
         public void AddDeveloper(AbstractPerson developer)
@@ -44,6 +85,7 @@ namespace AvansDevOpsApp.Domain.Project.Backlog
             if (Activities != null || this.Developer == null)
             {
                 this.Developer = developer;
+                this._context.GetPublisher().NotifySubscribers("ItemSwitch", developer.Name + " Got assigned " + this.Name);
             }
             else
             {
@@ -54,7 +96,7 @@ namespace AvansDevOpsApp.Domain.Project.Backlog
         {
             this.Developer = null;
         }
-        public AbstractPerson GetDeveloper()
+        public virtual AbstractPerson GetDeveloper()
         {
             if (this.Developer != null)
             {
@@ -102,16 +144,10 @@ namespace AvansDevOpsApp.Domain.Project.Backlog
             }
             
         }
-        public List<BacklogActivity> GetAllActivities()
+        public virtual List<BacklogActivity> GetAllActivities()
         {
-            if (this.Activities != null)
-            {
-                return this.Activities;
-            }
-            else
-            {
-                throw new ArgumentException("Activity is empty cannot get activities");
-            }
+            return this.Activities;
+
         }
     }
 }

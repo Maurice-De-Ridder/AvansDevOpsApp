@@ -26,9 +26,9 @@ namespace AvansDevOpsApp.Domain.Creation
         {
             this.Project = new GithubProject();
         }
-        public void BuildProjectBacklog()
+        public void BuildProjectBacklog(IProjectBacklog ProjectBacklog)
         {
-            this.Project.ProjectBacklog = new ProjectBacklog();
+            this.Project.ProjectBacklog = ProjectBacklog;
         }
         public void BuildForum()
         {

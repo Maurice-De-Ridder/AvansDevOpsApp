@@ -3,6 +3,7 @@ using AvansDevOpsApp.Domain.Creation.Interfaces;
 using AvansDevOpsApp.Domain.Notifier;
 using AvansDevOpsApp.Domain.Person;
 using AvansDevOpsApp.Domain.Project;
+using AvansDevOpsApp.Domain.Project.Backlog;
 using AvansDevOpsApp.Domain.Project.Sprint;
 using Moq;
 using System;
@@ -25,11 +26,11 @@ namespace TestProject
             string Description = "VoorDeTest";
             var Developers = Mock.Of<List<AbstractPerson>>();
             var Sprint = Mock.Of<ISprint>();
-
+            var ProjectBacklog = Mock.Of<IProjectBacklog>();
             //Act
             IProjectBuilder ProjectBuilder = new GithubProjectBuilder();
             ProjectBuildingDirector Director = new ProjectBuildingDirector(ProjectBuilder);
-            AbstractProject TestProject = Director.BuildProjectFull(ProjectName, Description, Developers, ProductOwner, Sprint);
+            AbstractProject TestProject = Director.BuildProjectFull(ProjectName, Description, Developers, ProductOwner, Sprint, ProjectBacklog);
 
             //Assert
             Assert.NotNull(TestProject);
