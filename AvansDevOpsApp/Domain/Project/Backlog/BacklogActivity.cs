@@ -16,7 +16,7 @@ namespace AvansDevOpsApp.Domain.Project.Backlog
         public int StoryPoints;
         public AbstractPerson Developer;
         public string DoD;
-
+        public bool IsFinished = false;
 
         public BacklogActivity()
         {

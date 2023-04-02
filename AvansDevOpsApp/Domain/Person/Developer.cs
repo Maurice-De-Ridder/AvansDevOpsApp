@@ -9,7 +9,7 @@ namespace AvansDevOpsApp.Domain.Person
 {
     public class Developer : AbstractPerson
     {
-
+        public bool IsLead = false;
         public Developer()
         {
         }

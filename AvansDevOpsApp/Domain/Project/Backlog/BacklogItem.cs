@@ -16,17 +16,31 @@ namespace AvansDevOpsApp.Domain.Project.Backlog
         public string Description;
         public int StoryPoints;
         public string DoD;
-        public IBacklogState State;
+        public AbstractBacklogState State;
 
         private AbstractPerson? Developer;
         private List<BacklogActivity>? Activities;
 
         public BacklogItem() { }
+     
 
-        public Boolean IsCorrectState(IBacklogState expectedState)
+        public BacklogItem() 
+        {
+            this.ChangeState(new BacklogTodoState());
+        }
+
+        public Boolean IsCorrectState(AbstractBacklogState expectedState)
         {
             return expectedState.GetType() == State.GetType();
         }
+
+        public void ChangeState(AbstractBacklogState State)
+        {
+            //implement correct change state
+            this.State = State;
+            this.State.SetContext(this);
+        }
+
 
 
         public void AddDeveloper(AbstractPerson developer)

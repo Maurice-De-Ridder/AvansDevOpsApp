@@ -48,7 +48,7 @@ namespace TestProject
             string Description = "Description";
             int StoryPoints = 1;
             string DoD = "Now";
-            IBacklogState State = Mock.Of<IBacklogState>();
+            AbstractBacklogState State = Mock.Of<AbstractBacklogState>();
 
             BacklogItem item = new BacklogItem();
 
