@@ -25,10 +25,3 @@ namespace AvansDevOpsApp.Domain.Project.Sprint
         public void UpdateBacklogItem(BacklogItem newBacklogItem, string backlogItemToChange);
     }
 }
-//public INotificationPublisher Publisher;
-//public string Name;
-
-//public List<BacklogItem> SprintBacklogItems = new List<BacklogItem>();
-//public DateTime Created = DateTime.Now;
-//public DateTime EndTime;
-//public ISprintState State;

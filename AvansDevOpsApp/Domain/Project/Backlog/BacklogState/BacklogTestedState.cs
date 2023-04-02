@@ -1,7 +1,9 @@
 ﻿using AvansDevOpsApp.Domain.Person;
+using Domain.Domain.Person;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -11,32 +13,46 @@ namespace AvansDevOpsApp.Domain.Project.Backlog.BacklogState
     {
         public override void ChangeStateBacklogDoing()
         {
-            throw new NotImplementedException();
+            throw new InvalidOperationException();
         }
 
         public override void ChangeStateBacklogDone()
         {
-            throw new NotImplementedException();
+            if(this._context.GetDeveloper().GetType() == typeof(LeadDeveloper)){
+                this._context.ChangeState(new BacklogDoneState());
+            }
+            else
+            {
+                throw new InvalidOperationException("Only lead developers are allowed to set done");
+            }
         }
 
         public override void ChangeStateBacklogReadyForTesting()
         {
-            throw new NotImplementedException();
+            if (this._context.GetDeveloper().GetType() == typeof(LeadDeveloper))
+            {
+                this._context.ChangeState(new BacklogReadyForTestingState());
+            }
+            else
+            {
+                throw new InvalidOperationException("Only lead developers are allowed to set back to ready for testing");
+            }
+            
         }
 
         public override void ChangeStateBacklogTested()
         {
-            throw new NotImplementedException();
+            throw new InvalidOperationException();
         }
 
         public override void ChangeStateBacklogTesting()
         {
-            throw new NotImplementedException();
+            throw new InvalidOperationException();
         }
 
         public override void ChangeStateBacklogTodo()
         {
-            throw new NotImplementedException();
+            throw new InvalidOperationException();
         }
     }
 }

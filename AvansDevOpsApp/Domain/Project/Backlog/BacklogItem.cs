@@ -40,9 +40,38 @@ namespace AvansDevOpsApp.Domain.Project.Backlog
 
         public void ChangeState(AbstractBacklogState State)
         {
-            //implement correct change state
             this.State = State;
             this.State.SetContext(this);
+        }
+
+        public void ChangeStateBacklogDoing()
+        {
+            this.State.ChangeStateBacklogDoing();
+        }
+
+        public void ChangeStateBacklogDone()
+        {
+            this.State.ChangeStateBacklogDone();
+        }
+
+        public void ChangeStateBacklogReadyForTesting()
+        {
+            this.State.ChangeStateBacklogReadyForTesting();
+        }
+
+        public void ChangeStateBacklogTested()
+        {
+            this.State.ChangeStateBacklogTested();
+        }
+
+        public void ChangeStateBacklogTesting()
+        {
+            this.State.ChangeStateBacklogTesting();
+        }
+
+        public void ChangeStateBacklogTodo()
+        {
+            this.State.ChangeStateBacklogTodo();
         }
 
         public void AddDeveloper(AbstractPerson developer)

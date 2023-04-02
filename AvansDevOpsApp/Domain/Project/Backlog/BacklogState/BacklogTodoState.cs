@@ -10,7 +10,7 @@ namespace AvansDevOpsApp.Domain.Project.Backlog.BacklogState
     {
         public override void ChangeStateBacklogDoing()
         {
-            throw new NotImplementedException();
+            this._context.ChangeState(new BacklogDoingState());
         }
 
         public override void ChangeStateBacklogDone()

@@ -14,8 +14,7 @@ namespace AvansDevOpsApp.Domain.Project.Backlog
         
         public void Add(BacklogItem item)
         {
-            item.ChangeContext(this);
-            items.Add(item);
+            this.items.Add(item);
         }
 
         public void ChangePos(int index, BacklogItem item)
@@ -33,17 +32,6 @@ namespace AvansDevOpsApp.Domain.Project.Backlog
         {
             return this.items;
         }
-        public BacklogItem GetForSprint(string name)
-        {
-            BacklogItem item = items.Find(i => i.Name == name);
-            if (item == null)
-            {
-                return null;
-            }
-            items.Remove(item);
-            return item;
-        }
-
         public void Subscribe(AbstractPerson p)
         {
             throw new NotImplementedException();
