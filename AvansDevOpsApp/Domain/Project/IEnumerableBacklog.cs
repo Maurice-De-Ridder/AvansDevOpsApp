@@ -1,4 +1,5 @@
-﻿using AvansDevOpsApp.Domain.Person;
+﻿using AvansDevOpsApp.Domain.Notifier;
+using AvansDevOpsApp.Domain.Person;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,5 +12,7 @@ namespace AvansDevOpsApp.Domain.Project
     {
 
         public void Subscribe(AbstractPerson p);
+
+        public INotificationPublisher GetPublisher();
     }
 }

@@ -17,7 +17,7 @@ namespace AvansDevOpsApp.Domain.Project
         public List<AbstractPerson> Developers = new List<AbstractPerson>();
         public AbstractPerson ProjectOwner;
         public List<ISprint> Sprints = new List<ISprint>();
-        public ProjectBacklog ProjectBacklog;
+        public IProjectBacklog ProjectBacklog;
         public IForum Forum;
 
     }

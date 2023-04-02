@@ -20,7 +20,7 @@ namespace AvansDevOpsApp.Domain.Project.Backlog.BacklogState
 
         public override void ChangeStateBacklogReadyForTesting()
         {
-            throw new InvalidOperationException();
+            throw new InvalidOperationException("Already in Testing");
         }
 
         public override void ChangeStateBacklogTested()

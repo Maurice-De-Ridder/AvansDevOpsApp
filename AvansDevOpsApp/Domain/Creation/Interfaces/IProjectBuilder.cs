@@ -14,7 +14,7 @@ namespace AvansDevOpsApp.Domain.Creation.Interfaces
     public interface IProjectBuilder
     {
         public void Reset();
-        public void BuildProjectBacklog();
+        public void BuildProjectBacklog(IProjectBacklog projectBacklog);
         public void BuildForum();
         public void BuildProjectName(string name);
         public void BuildDescription(string description);

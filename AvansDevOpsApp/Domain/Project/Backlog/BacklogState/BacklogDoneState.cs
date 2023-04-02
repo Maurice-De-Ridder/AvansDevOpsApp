@@ -15,7 +15,7 @@ namespace AvansDevOpsApp.Domain.Project.Backlog.BacklogState
 
         public override void ChangeStateBacklogDone()
         {
-            throw new NotImplementedException();
+            throw new NotImplementedException("Already in Done");
         }
 
         public override void ChangeStateBacklogReadyForTesting()

@@ -33,6 +33,11 @@ namespace AvansDevOpsApp.Domain.Project.Sprint
             this.Publisher.Subscribe(person);
         }
 
+        public INotificationPublisher GetPublisher()
+        {
+            return this.Publisher;
+        }
+
         // Verander dit bij implementatie van echte states
         public void ChangeStateCancelled()
         {

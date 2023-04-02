@@ -1,6 +1,7 @@
 ﻿using AvansDevOpsApp.Domain.Creation.Interfaces;
 using AvansDevOpsApp.Domain.Person;
 using AvansDevOpsApp.Domain.Project;
+using AvansDevOpsApp.Domain.Project.Backlog;
 using AvansDevOpsApp.Domain.Project.Sprint;
 using System;
 using System.Collections.Generic;
@@ -18,16 +19,15 @@ namespace AvansDevOpsApp.Domain.Creation
             _builder = builder;
         }
 
-        public AbstractProject BuildProjectFull(string name, string description, List<AbstractPerson> developers, AbstractPerson productOwner,ISprint sprint)
+        public AbstractProject BuildProjectFull(string name, string description, List<AbstractPerson> developers, AbstractPerson productOwner,ISprint sprint,IProjectBacklog projectBacklog)
         {
-            this._builder.BuildProjectBacklog();
+            this._builder.BuildProjectBacklog(projectBacklog);
             this._builder.BuildForum();
             this._builder.BuildProjectName(name);
             this._builder.BuildDescription(description);
             this._builder.BuildDevelopers(developers);
             this._builder.BuildProjectOwner(productOwner);
             this._builder.BuildSprint(sprint);
-            this._builder.BuildProjectBacklog();
             return this._builder.GetProject();
         }
 

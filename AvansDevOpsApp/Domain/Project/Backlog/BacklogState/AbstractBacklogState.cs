@@ -12,7 +12,7 @@ namespace AvansDevOpsApp.Domain.Project.Backlog.BacklogState
 
         public void SetContext(BacklogItem context)
         {
-            this._context= context;
+            this._context = context;
         }
 
         public abstract void ChangeStateBacklogTodo();

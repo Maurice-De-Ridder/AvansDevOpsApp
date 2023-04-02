@@ -1,4 +1,5 @@
-﻿using AvansDevOpsApp.Domain.Person;
+﻿using AvansDevOpsApp.Domain.Notifier;
+using AvansDevOpsApp.Domain.Person;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +11,12 @@ namespace AvansDevOpsApp.Domain.Project.Backlog
     public class ProjectBacklog : IProjectBacklog
     {
         private List<BacklogItem> items = new List<BacklogItem>();
-        public ProjectBacklog() { }
+
+        public INotificationPublisher Publisher;
+        public ProjectBacklog(INotificationPublisher publisher) 
+        { 
+            this.Publisher = publisher;
+        }
         
         public void Add(BacklogItem item)
         {
@@ -34,7 +40,12 @@ namespace AvansDevOpsApp.Domain.Project.Backlog
         }
         public void Subscribe(AbstractPerson p)
         {
-            throw new NotImplementedException();
+            this.Publisher.Subscribe(p);
+        }
+
+        public INotificationPublisher GetPublisher()
+        {
+            return this.Publisher;
         }
     }
 }

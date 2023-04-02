@@ -19,7 +19,18 @@ namespace AvansDevOpsApp.Domain.Project.Backlog.BacklogState
         public override void ChangeStateBacklogDone()
         {
             if(this._context.GetDeveloper().GetType() == typeof(LeadDeveloper)){
-                this._context.ChangeState(new BacklogDoneState());
+
+                if(this._context.GetAllActivities() != null && this._context.GetAllActivities().Find(x => x.IsFinished == false) == null)
+                {
+                    this._context.ChangeState(new BacklogDoneState());
+                }else if (this._context.GetAllActivities() == null)
+                {
+                    this._context.ChangeState(new BacklogDoneState());
+                }
+                else 
+                {
+                    throw new InvalidOperationException("Not all activities are finished");
+                }
             }
             else
             {
@@ -42,7 +53,7 @@ namespace AvansDevOpsApp.Domain.Project.Backlog.BacklogState
 
         public override void ChangeStateBacklogTested()
         {
-            throw new InvalidOperationException();
+            throw new InvalidOperationException("Already in tested");
         }
 
         public override void ChangeStateBacklogTesting()

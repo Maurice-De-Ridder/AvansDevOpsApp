@@ -14,9 +14,7 @@ namespace AvansDevOpsApp.Domain.Project.Sprint
     public interface ISprint : IEnumerableBacklog
     {
         public void ChangeStateCancelled();
-
         public void ChangeState(ISprintState sprintState);
-
         public void SetName(string newName);
         public void SetEndTime(DateTime time);
         public void AddBacklogItem(BacklogItem newItem);

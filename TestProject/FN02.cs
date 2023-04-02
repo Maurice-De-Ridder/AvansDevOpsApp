@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using AvansDevOpsApp.Domain.Project.Backlog;
 using AvansDevOpsApp.Domain.Project.Backlog.BacklogState;
+using AvansDevOpsApp.Domain.Notifier;
 
 namespace TestProject
 {
@@ -24,8 +25,9 @@ namespace TestProject
             var ItemOne =  Mock.Of<BacklogItem>();
             var ItemTwo = Mock.Of<BacklogItem>();
             var ItemThree = Mock.Of<BacklogItem>();
+            var NotificationPublisher = Mock.Of<INotificationPublisher>();
 
-            ProjectBacklog Backlog = new ProjectBacklog();
+            ProjectBacklog Backlog = new ProjectBacklog(NotificationPublisher);
             
             //Act
             Backlog.Add(ItemOne);

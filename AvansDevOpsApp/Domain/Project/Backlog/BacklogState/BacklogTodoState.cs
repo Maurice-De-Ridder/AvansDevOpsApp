@@ -15,27 +15,27 @@ namespace AvansDevOpsApp.Domain.Project.Backlog.BacklogState
 
         public override void ChangeStateBacklogDone()
         {
-            throw new NotImplementedException();
+            throw new InvalidOperationException();
         }
 
         public override void ChangeStateBacklogReadyForTesting()
         {
-            throw new NotImplementedException();
+            throw new InvalidOperationException();
         }
 
         public override void ChangeStateBacklogTested()
         {
-            throw new NotImplementedException();
+            throw new InvalidOperationException();
         }
 
         public override void ChangeStateBacklogTesting()
         {
-            throw new NotImplementedException();
+            throw new InvalidOperationException();
         }
 
         public override void ChangeStateBacklogTodo()
         {
-            throw new NotImplementedException();
+            throw new InvalidOperationException("Already in TODO");
         }
     }
 }
