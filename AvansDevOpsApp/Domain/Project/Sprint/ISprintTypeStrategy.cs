@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace AvansDevOpsApp.Domain.Project.Sprint
 {
-    internal class ISprintTypeStrategy
+    public interface ISprintTypeStrategy
     {
+        public void FinishSprint();
     }
 }

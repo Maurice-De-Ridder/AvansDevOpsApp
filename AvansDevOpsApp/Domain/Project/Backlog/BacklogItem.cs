@@ -45,7 +45,6 @@ namespace AvansDevOpsApp.Domain.Project.Backlog
             this.State.SetContext(this);
         }
 
-
         public void AddDeveloper(AbstractPerson developer)
         {
             if (Activities != null || this.Developer == null)
@@ -120,6 +119,5 @@ namespace AvansDevOpsApp.Domain.Project.Backlog
                 throw new ArgumentException("Activity is empty cannot get activities");
             }
         }
-
     }
 }

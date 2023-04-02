@@ -15,7 +15,7 @@ namespace TestProject
 
             ProductOwner productOwner = new ProductOwner("Luuk",new EmailNotification());
 
-            Sprint sprintEen = new Sprint("SprintEen",new NotificationPublisher());
+            ConcreteSprint sprintEen = new ConcreteSprint("SprintEen",new NotificationPublisher());
 
             sprintEen.Subscribe(productOwner);
 
